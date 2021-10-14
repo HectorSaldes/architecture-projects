@@ -1,0 +1,46 @@
+# * Mascotas
+
+# ? Obtener todas las mascotas
+GET http://127.0.0.1:8000/api/mascota/showAll
+
+###
+
+GET http://127.0.0.1:8000/api/mascota/test1
+###
+
+# ? Guardar y modificar mascota
+POST http://127.0.0.1:8000/api/mascota/store
+Content-Type: application/json
+
+{
+    "raza": "Aguíla",
+    "tamanio": "Grande",
+    "tipo_mascotas_id":3
+}
+
+###
+# ? Modificar
+PUT http://127.0.0.1:8000/api/mascota/update
+Content-Type: application/json
+
+{
+    "raza": "Pastor aleman",
+    "tamanio": "Grande",
+    "tipo_mascotas_id": 3,
+    "id": 55
+}
+
+###
+# ? Consultas pruebas
+GET http://127.0.0.1:8000/api/pruebasConsulta?id=5
+
+###
+# ? Obtober una mascota
+GET http://127.0.0.1:8000/api/mascota/show/3
+
+###
+# ? Eliminar mascota
+GET http://127.0.0.1:8000/api/mascota/destroy/3
+
+
+

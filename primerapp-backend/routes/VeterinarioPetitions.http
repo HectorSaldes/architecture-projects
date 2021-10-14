@@ -1,0 +1,31 @@
+# * Veterinarios
+
+# ? Registrar un veterianrio con varias mascotas
+POST http://127.0.0.1:8000/api/veterinario/store
+Content-Type: application/json
+
+{
+    "id": 5,
+    "nombre": "Juan",
+    "apellido1": "Perez",
+    "apellido2": "Martinez",
+    "cedula_profesional": "004",
+    "mascotas": [
+        {
+            "id": 2
+        },
+        {
+            "id": 3
+        }
+    ]
+}
+
+###
+
+# ? Obtener un veterinario con todas sus mascotas a las que atiendde
+GET http://127.0.0.1:8000/api/veterinario/consultarVeterinario/5
+
+###
+
+# ? Obtener solo veterinario
+GET http://127.0.0.1:8000/api/veterinario/show/1
