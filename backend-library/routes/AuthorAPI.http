@@ -1,0 +1,33 @@
+# ? Mostrar todos
+GET http://127.0.0.1:8000/api/author/index
+
+###
+
+# ? Crear uno
+POST http://127.0.0.1:8000/api/author/store
+Content-Type: application/json
+
+{
+    "id": 4,
+    "name": "Miguel",
+    "firstSurname": "Jacinto",
+    "secondSurname": "Perez",
+    "your_books": [
+        {
+            "id": 58
+        }
+    ]
+}
+
+###
+
+# ? Mostrar uno
+GET http://127.0.0.1:8000/api/author/show/3
+
+###
+
+# ? Eliminar uno
+GET http://127.0.0.1:8000/api/author/destroy/3
+
+
+

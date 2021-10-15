@@ -17,15 +17,16 @@ class Author extends Model
         "secondSurname"
     ];
 
-    public $timestamps = false;
-
     // ? Regresa los libros donde pertenece
-    public function yourBooks(){
+    public function yourBooks()
+    {
         return $this->belongsToMany(
             Book::class, // * Que tabla
             'authors_books', // * Tabla PIVOTE o intersección
             'authors_id', // * Donde estoy
             'books_id' // * Donde voy
-        );
+        )->orderBy('publication_date', 'DESC'); // * Ordenar por la columna del más reciente al más antiguo
     }
+
+    public $timestamps = false;
 }

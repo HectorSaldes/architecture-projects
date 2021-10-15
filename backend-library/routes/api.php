@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EditorialController;
+use App\Http\Controllers\AuthorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +33,11 @@ Route::prefix('editorial')->group(function(){
     Route::post('/store', [EditorialController::class,'store']);
     Route::get('/show/{id}', [EditorialController::class,'show']);
     Route::get('/destroy/{id}', [EditorialController::class,'destroy']);
+});
+
+Route::prefix('author')->group(function (){
+    Route::get('/index', [AuthorController::class,'index']);
+    Route::post('/store', [AuthorController::class,'store']);
+    Route::get('/show/{id}', [AuthorController::class,'show']);
+    Route::get('/destroy/{id}', [AuthorController::class,'destroy']);
 });

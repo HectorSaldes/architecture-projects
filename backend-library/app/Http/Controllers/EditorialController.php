@@ -32,13 +32,14 @@ class EditorialController extends Controller
             DB::beginTransaction();
             if (!$request->id) {
                 $obj = new Editorial();
+                $response['message'] = 'Creación exitosa';
             } else {
                 $obj = Editorial::find($request->id);
+                $response['message'] = 'Modificación exitosa';
             }
             $obj->fill(['name' => $request->name]);
             $obj->save();
             $response['data'] = $obj;
-            $response['message'] = 'Creación exitosa';
             $response['error'] = false;
             $response['code'] = 201;
             DB::commit();
