@@ -1,0 +1,23 @@
+# ? Mostrar todos
+GET http://127.0.0.1:8000/api/editorial/index
+
+###
+
+# ? Crear uno
+POST http://127.0.0.1:8000/api/editorial/store
+Content-Type: application/json
+
+#"id": 25,
+{
+    "name": "Pearson"
+}
+
+###
+
+# ? Mostrar uno
+GET http://127.0.0.1:8000/api/editorial/show/3
+
+###
+
+# ? Eliminar uno
+GET http://127.0.0.1:8000/api/editorial/destroy/3

@@ -1,0 +1,23 @@
+# ? Mostrar todos
+GET http://127.0.0.1:8000/api/category/index
+
+###
+
+# ? Crear uno
+POST http://127.0.0.1:8000/api/category/store
+Content-Type: application/json
+
+{
+    "id": 25,
+    "name": "Escolar"
+}
+
+###
+
+# ? Mostrar uno
+GET http://127.0.0.1:8000/api/category/show/3
+
+###
+
+# ? Eliminar uno
+GET http://127.0.0.1:8000/api/category/destroy/3
