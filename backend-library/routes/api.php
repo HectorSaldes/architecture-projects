@@ -44,8 +44,10 @@ Route::prefix('author')->group(function (){
 });
 
 Route::prefix('book')->group(function (){
+    Route::get('/show/index/', [BookController::class,'showLikes']);
     Route::get('/index', [BookController::class,'index']);
     Route::post('/store', [BookController::class,'store']);
     Route::get('/show/{id}', [BookController::class,'show']);
     Route::get('/destroy/{id}', [BookController::class,'destroy']);
+    Route::get('/show/year/{year}', [BookController::class,'showInYear']);
 });

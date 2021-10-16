@@ -28,3 +28,16 @@ GET http://127.0.0.1:8000/api/book/show/27
 
 # ? Eliminar uno
 GET http://127.0.0.1:8000/api/book/destroy/27
+
+###
+
+# ? Mostrar un año en específico
+GET http://127.0.0.1:8000/api/book/show/year/2021
+
+###
+
+# ? Mostrar en base a ISBN o título
+GET http://127.0.0.1:8000/api/book/show/index?query=12
+###
+GET http://127.0.0.1:8000/api/book/show/index?query=Matemáticas
+

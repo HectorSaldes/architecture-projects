@@ -6,6 +6,7 @@ use App\Models\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\QueryException;
+use Symfony\Component\Console\Input\Input;
 
 
 class BookController extends Controller
@@ -102,4 +103,44 @@ class BookController extends Controller
             return response()->json($response, $response['code']);
         }
     }
+
+    public function showInYear($year)
+    {
+        $response = ['message' => 'Ocurrió un error', 'error' => true, 'code' => 500, 'data' => []];
+        try {
+            $books = Book::query()->whereYear('publication_date', '=', $year)->orderBy('title', 'ASC')->get();
+            if (sizeof($books) != 0) {
+                $response['message'] = 'Búsqueda exitosa';
+            } else {
+                $response['message'] = 'No hay libros en ese año';
+            }
+            $response['data'] = $books;
+            $response['error'] = false;
+            $response['code'] = 200;
+        } catch (Exception $e) {
+        } finally {
+            return response()->json($response, $response['code']);
+        }
+    }
+
+    public function showLikes(Request $request)
+    {
+        $response = ['message' => 'Ocurrió un error', 'error' => true, 'code' => 500, 'data' => []];
+        try {
+            $query = $request->input('query');
+            $books = Book::query()->where('isbn', $query)->orWhere('title', 'like', '%' . $query . '%')->get();
+            if(sizeof($books)!=0){
+                $response['message'] = 'Búsqueda exitosa';
+            }else{
+                $response['message'] = 'No hay libros encontrados por ISBN o Título';
+            }
+            $response['data'] = $books;
+            $response['error'] = false;
+            $response['code'] = 200;
+        } catch (Exception $e) {
+        } finally {
+            return response()->json($response, $response['code']);
+        }
+    }
+
 }
