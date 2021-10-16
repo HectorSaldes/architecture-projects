@@ -1,0 +1,30 @@
+# ? Mostrar todos
+GET http://127.0.0.1:8000/api/book/index
+
+###
+
+# ? Crear uno
+POST http://127.0.0.1:8000/api/book/store
+Content-Type: application/json
+
+{
+    "id": 27,
+    "isbn": "9",
+    "title": "El conjuro",
+    "description": "Lirbo de terror",
+    "publication_date": "2013-10-23",
+    "category_id": 2,
+    "editorial_id": 2,
+    "your_authors": [
+    ]
+}
+
+###
+
+# ? Mostrar uno
+GET http://127.0.0.1:8000/api/book/show/27
+
+###
+
+# ? Eliminar uno
+GET http://127.0.0.1:8000/api/book/destroy/27

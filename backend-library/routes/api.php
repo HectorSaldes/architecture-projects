@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EditorialController;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +41,11 @@ Route::prefix('author')->group(function (){
     Route::post('/store', [AuthorController::class,'store']);
     Route::get('/show/{id}', [AuthorController::class,'show']);
     Route::get('/destroy/{id}', [AuthorController::class,'destroy']);
+});
+
+Route::prefix('book')->group(function (){
+    Route::get('/index', [BookController::class,'index']);
+    Route::post('/store', [BookController::class,'store']);
+    Route::get('/show/{id}', [BookController::class,'show']);
+    Route::get('/destroy/{id}', [BookController::class,'destroy']);
 });

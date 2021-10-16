@@ -8,13 +8,13 @@ POST http://127.0.0.1:8000/api/author/store
 Content-Type: application/json
 
 {
-    "id": 4,
+    "id": 1,
     "name": "Miguel",
     "firstSurname": "Jacinto",
     "secondSurname": "Perez",
     "your_books": [
         {
-            "id": 58
+            "id": 1
         }
     ]
 }
@@ -22,7 +22,7 @@ Content-Type: application/json
 ###
 
 # ? Mostrar uno
-GET http://127.0.0.1:8000/api/author/show/3
+GET http://127.0.0.1:8000/api/author/show/1
 
 ###
 

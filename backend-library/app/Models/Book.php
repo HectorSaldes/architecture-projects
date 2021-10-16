@@ -18,7 +18,6 @@ class Book extends Model
         "publication_date",
         "category_id",
         "editorial_id",
-
     ];
 
     public $timestamps = false;
