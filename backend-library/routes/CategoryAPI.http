@@ -7,9 +7,9 @@ GET http://127.0.0.1:8000/api/category/index
 POST http://127.0.0.1:8000/api/category/store
 Content-Type: application/json
 
+#"id": 25,
 {
-    "id": 25,
-    "name": "Escolar"
+    "name": "Libro de texto"
 }
 
 ###
