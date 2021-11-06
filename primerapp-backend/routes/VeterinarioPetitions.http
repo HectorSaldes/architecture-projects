@@ -29,3 +29,7 @@ GET http://127.0.0.1:8000/api/veterinario/consultarVeterinario/5
 
 # ? Obtener solo veterinario
 GET http://127.0.0.1:8000/api/veterinario/show/1
+
+###
+
+GET http://127.0.0.1:8000/api/veterinario/detallarVeterinario/1

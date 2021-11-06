@@ -54,4 +54,25 @@ class VeterinarioController extends Controller
             return response()->json(['error'=>true,'message'=>$th],200);
         }
     }
+
+    public function detallarVeterinario($id){
+        $objetoVeterinario2 = Veterinario::with(['mascotas'=>function($q){
+            $q->orderBy('raza', 'ASC');
+        }])->where('id', $id)->first();
+        return response()->json([data=>$objetoVeterinario2]);
+    }
+
+    public function destruirVeterinario($id){
+        $objetoVeterinario = Veterinario::find($id);
+        if($objetoVeterinario->mascotas){
+
+        }
+    }
+
+    public function buscarMascotas(Request $request){
+        $listarMascotas = Mascota::where('raza', 'like','%'.$request->criterio.'%')->orWhere('tamanio', 'like', '%'.$request->criterio.'%')->get();
+        return response()->json([data=>$listarMascotas]);
+    }
+
+
 }

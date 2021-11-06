@@ -22,7 +22,7 @@ Content-Type: application/json
 ###
 
 # ? Mostrar uno
-GET http://127.0.0.1:8000/api/author/show/1
+GET http://127.0.0.1:8000/api/author/show/2
 
 ###
 

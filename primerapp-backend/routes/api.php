@@ -55,5 +55,6 @@ Route::prefix('veterinario')->group(function () {
     Route::get('/show/{id}', [VeterinarioController::class, 'show']);
     Route::post('/store', [VeterinarioController::class, 'store']);
     Route::get('/consultarVeterinario/{id}', [VeterinarioController::class, 'consultarVeterinario']);
-
+    Route::get('/detallarVeterinario/{id}', [VeterinarioController::class, 'detallarVeterinario']);
+    Route::get('/buscarMascotas/{id}', [VeterinarioController::class, 'buscarMascotas']);
 });
